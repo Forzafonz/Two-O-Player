@@ -1,20 +1,16 @@
-Class Player
-  attr_accessor :name :lives
-  
-  def initialize(name)
-    self.name = name
-    self.lives = 3
-  end
+require './game.rb'
+require './player.rb'
+require './question.rb'
 
-  def lost?
-    self.lives -= 1
-  end
+prompt = '> '
+puts "Hi, please enter first player name"
+puts prompt
+player1 = $stdin.gets.chomp
 
-end
+puts "Thank you! Now please enter the second player name"
+puts prompt
+player2 = $stdin.gets.chomp
 
-
-Class Game
-end
-
-Class Question
-end
+p1 = Player.new(player1)
+p2 = Player.new(player2)
+Game.new(p1, p2)
